@@ -1,5 +1,6 @@
 require "aoc2024/version"
 
+require "aoc2024/historian_hysteria"
 
 module Aoc2024
   class Error < StandardError; end
