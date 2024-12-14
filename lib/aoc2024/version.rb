@@ -1,3 +1,3 @@
 module Aoc2024
-  VERSION="0.0"
+  VERSION="2.2"
 end
