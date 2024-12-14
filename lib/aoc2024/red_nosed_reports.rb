@@ -1,5 +1,5 @@
 module Aoc2024
-  class Rednosedreports
+  class RedNosedReports
     attr_reader :reports
 
     def initialize reports=[]
@@ -41,7 +41,7 @@ module Aoc2024
 
     private def safe? levels
       # determine the flow direction
-      trend = Rednosedreports.direction levels
+      trend = RedNosedReports.direction levels
       return false if trend == :flatlined
 
       levels[1..-1].inject(levels[0]) do |memo, item|
@@ -76,7 +76,7 @@ module Aoc2024
     private def safe_enough? levels
 
       # determine the flow direction
-      trend = Rednosedreports.direction levels
+      trend = RedNosedReports.direction levels
       return false if trend == :flatlined
 
       delete_me = offender(trend, levels)

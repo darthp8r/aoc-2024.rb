@@ -1,40 +1,40 @@
 module Aoc2024
-  RSpec.describe Rednosedreports do
+  RSpec.describe RedNosedReports do
     context "Prep Work" do
       describe "Increasing Trends" do
         it "agrees with a normal progression" do
-          expect(Rednosedreports.direction([1,2,3,4,5])).to be :increasing
+          expect(RedNosedReports.direction([1,2,3,4,5])).to be :increasing
         end
 
         it "agrees with a flipped progression" do
-          expect(Rednosedreports.direction([1,3,2,4,5])).to be :increasing
+          expect(RedNosedReports.direction([1,3,2,4,5])).to be :increasing
         end
       end
 
       describe "Decreasing Trends" do
         it "agrees with a normal progression" do
-          expect(Rednosedreports.direction([1,2,3,4,5].reverse)).to be :decreasing
+          expect(RedNosedReports.direction([1,2,3,4,5].reverse)).to be :decreasing
         end
 
         it "agrees with a flipped progression" do
-          expect(Rednosedreports.direction([1,3,2,4,5].reverse)).to be :decreasing
+          expect(RedNosedReports.direction([1,3,2,4,5].reverse)).to be :decreasing
         end
       end
 
       describe "Undeterminable Trends" do
         it "down-up-down-up is flatlined" do
-          expect(Rednosedreports.direction([2,1,4,3,6].reverse)).to be :flatlined
+          expect(RedNosedReports.direction([2,1,4,3,6].reverse)).to be :flatlined
         end
 
         it "up-up-down-down is flatlined" do
-          expect(Rednosedreports.direction([1,2,4,3,2].reverse)).to be :flatlined
+          expect(RedNosedReports.direction([1,2,4,3,2].reverse)).to be :flatlined
         end
       end
     end
 
     context "Sample" do
       before(:all) do
-        @subject = Rednosedreports.new Support.file_to_list __FILE__.gsub('spec.rb', 'sample.txt')
+        @subject = RedNosedReports.new Support.file_to_list __FILE__.gsub('spec.rb', 'sample.txt')
       end
       subject { @subject }
 
@@ -60,7 +60,7 @@ module Aoc2024
     #
     context "Fabricated" do
       before(:all) do
-        @subject = Rednosedreports.new [
+        @subject = RedNosedReports.new [
           "1 2 3 8 4",  # SAFE w/o 3
           "1 2 3 4 5",  # SAFE
           "1 2 3 3 4",  # SAFE w/o 3
@@ -88,7 +88,7 @@ module Aoc2024
 
     context "Actual" do
       before(:all) do
-        @subject = Rednosedreports.new Support.file_to_list __FILE__.gsub('spec.rb', 'actual.txt')
+        @subject = RedNosedReports.new Support.file_to_list __FILE__.gsub('spec.rb', 'actual.txt')
       end
       subject { @subject }
 
